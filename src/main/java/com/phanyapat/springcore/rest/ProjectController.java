@@ -11,14 +11,25 @@ public class ProjectController {
 
     private Coach myCoach;
 
+    private  Coach anotherCoach;
+
     @Autowired
-    public ProjectController(@Qualifier("footballCoach") Coach coach){
+    public ProjectController(@Qualifier("footballCoach") Coach theCoach,
+                             @Qualifier("footballCoach") Coach theAnotherCoach){
+
         System.out.println("In constructor2 " + getClass().getSimpleName());
-        myCoach = coach;
+
+        myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
 
     @GetMapping("/dailyWorkout")
     public  String getDailyWorkout(){
         return myCoach.getDailyWorkout();
+    }
+
+    @GetMapping("/check")
+    public  String check(){
+        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
     }
 }
