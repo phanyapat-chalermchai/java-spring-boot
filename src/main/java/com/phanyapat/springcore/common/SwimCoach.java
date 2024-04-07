@@ -2,15 +2,15 @@ package com.phanyapat.springcore.common;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class FootballCoach implements Coach {
+public class SwimCoach implements Coach {
 
-    public  FootballCoach(){
+    public  SwimCoach(){
         System.out.println("In constructor " + getClass().getSimpleName());
     }
 
     @Override
     public String getDailyWorkout() {
-        return "Practice fast shoot for 15 min";
+        return "Swim 1000 meters as a warm up";
     }
 }
+

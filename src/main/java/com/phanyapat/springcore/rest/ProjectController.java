@@ -12,9 +12,9 @@ public class ProjectController {
     private Coach myCoach;
 
     @Autowired
-    public ProjectController(@Qualifier("footballCoach") Coach theCoach){
+    public ProjectController(@Qualifier("aquatic") Coach theCoach){
 
-        System.out.println("In constructor2 " + getClass().getSimpleName());
+        System.out.println("In constructor " + getClass().getSimpleName());
 
         myCoach = theCoach;
     }
